@@ -38,6 +38,11 @@ if (!$val) {
     $_SESSION["name"] = $val["name"];
     $_SESSION["status"] = $val["status"];
     $_SESSION["is_admin"] = $val["is_admin"];
-    header("Location:home.php");
-    exit();
+    if ($_SESSION["status"] == 1) {
+        header("Location:home.php");
+        exit();
+    } else {
+        header("Location:not_home.php");
+        exit();
+    }
 }

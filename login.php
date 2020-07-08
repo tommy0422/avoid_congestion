@@ -18,7 +18,6 @@
             <p>パスワード</p>
             <input type="password" name="pass" placeholder="パスワードを入力してください">
             <input type="submit" value="ログイン">
-            <a href="register.php">新規会員登録</a>
         </form>
     </div>
 
