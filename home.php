@@ -20,7 +20,7 @@ if ($user_status == 1) {
 // exit();
 
 //入室時間と退室時間
-$sql = 'SELECT * FROM inout_table LEFT OUTER JOIN users_table ON inout_table.user_id = users_table.id WHERE user_id = :user_id';
+$sql = 'SELECT * FROM inout_table LEFT OUTER JOIN users_table ON inout_table.user_id = users_table.id WHERE user_id = :user_id ORDER BY inout_table DESC';
 
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
@@ -88,6 +88,29 @@ if ($status == false) {
                 });
             });
         }
+
+        // function getNow() {
+        //     var hour = now.getHours();
+        //     var min = now.getMinutes();
+        //     var sec = now.getSeconds();
+
+        //     if (hour < 10) {
+        //         hour = "0" + hour;
+        //     }
+        //     if (min < 10) {
+        //         min = "0" + min;
+        //     }
+        //     if (sec < 10) {
+        //         sec = "0" + sec;
+        //     }
+
+        //     //出力用
+        //     var s = hour + ":" + min + ":" + sec;
+        //     return s
+        // }
+
+        // var diffTime = <?= $outtime ?> - getNow();
+        // var diffSecond = Math.floor(diffTime / (1000));
     </script>
 </body>
 
